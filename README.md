@@ -1,0 +1,2 @@
+# scratchpad
+Experiments with echopype
