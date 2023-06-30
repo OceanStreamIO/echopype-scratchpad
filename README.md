@@ -37,4 +37,3 @@ This repository is designed to help users familiarize themselves with echopype.
     ```bash
     $ jupyter notebook
     ```
-
