@@ -25,5 +25,12 @@ A: The terms Broadband (BB) and Continuous Wave (CW) refer to the frequency char
 
 **Q: What is the difference between Broadband (BB) and Continuous Wave (CW) modes in echosounder systems?**
 
+A:
 - A Continuous Wave (CW) system transmits a signal at a constant frequency.
 - A Broadband (BB) system transmits a frequency-modulated "chirp" that covers a range of frequencies. This chirp usually starts at a lower frequency and increases to a higher frequency, covering a band of frequencies in the process. The use of a range of frequencies and frequency modulation helps BB systems to provide higher resolution data and improved signal-to-noise ratio compared to CW systems. This could mean better ability to distinguish different types of seafloor, detect and identify objects in the water column, or map the seafloor in detail
+
+**Q: Where we can find information about whether the data collected with a specific echosounder uses Continuous Wave (CW) or Broadband (BB)? Can we identify this information in the netCDF file containing the echosounder data? I've noticed the 'beam2' group appearing in the output description, even though I was under the impression that echopype's convention was to use only the 'beam_1' group.**
+
+A: On beam2: as per the echopype documentation, they're using beam2 for echosounders that store data in both complex and power format, when the echosounder is using both modes. EK80 is one of those, it can use both power (and then the file looks like an EK60 one) and complex mode (then, it'll have beam_r and beam_i populated instead of the power and angle ones). So if we have an EK80 file with a single beam1 dataset it means it's using a consistent mode, and we realise which one by looking at which fields it has data in. And then if it's power it means it's using CW mode and if it's broadband it means it's using BB mode.
+
+See: [GitHub repository (EK80 example)](https://github.com/OceanStreamIO/echopype-scratchpad/blob/main/echopype-scratchpad/one_off_notebook/Basic%20echopype%20processing%20of%20EK80.ipynb) and [GitHub repository (EK60 example)](https://github.com/OceanStreamIO/echopype-scratchpad/blob/main/echopype-scratchpad/one_off_notebook/Basic%20echopype%20processing%20of%20EK60%20files.ipynb)
