@@ -5,5 +5,5 @@
 - NASC tasks notebooks:
 
     - `nasc_echopy_process_understanding.ipynb`  (Used for analyzing the Echopy code for NASC computation)
-    - `nasc_echopype_process_understanding.ipynb`  (Used for analyzing Echopype code for NASC computation - where an bug was found)
+    - `nasc_echopype_process_understanding.ipynb`  (Used for analyzing Echopype code for NASC computation - where a bug was found)
     - `echopy-nasc-to-echopype-adaptation.ipynb` (Used for adapting the Echopy method for NASC computation to be suitable for Echopype, in case we need it in the future)
